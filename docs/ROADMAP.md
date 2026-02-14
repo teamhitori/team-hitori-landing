@@ -10,13 +10,13 @@ Phased plan from empty repo to production landing page at `teamhitori.com`.
 
 | Task | Description | Status |
 |------|-------------|--------|
-| 1.1 | Initialize Astro project (`npm create astro@latest`) | ⬜ |
-| 1.2 | Add Tailwind CSS integration (`@astrojs/tailwind`) | ⬜ |
-| 1.3 | Create base layout (`src/layouts/Base.astro`) with `<head>`, meta tags, favicon | ⬜ |
-| 1.4 | Create index page (`src/pages/index.astro`) with placeholder content | ⬜ |
-| 1.5 | Verify `npm run dev` serves locally on `localhost:4321` | ⬜ |
-| 1.6 | Verify `npm run build` produces static output in `dist/` | ⬜ |
-| 1.7 | Add `.nvmrc` (Node 20 LTS) | ⬜ |
+| 1.1 | Initialize Astro project (`npm create astro@latest`) | ✅ |
+| 1.2 | Add Tailwind CSS integration (`@astrojs/tailwind`) | ✅ |
+| 1.3 | Create base layout (`src/layouts/Base.astro`) with `<head>`, meta tags, favicon | ✅ |
+| 1.4 | Create index page (`src/pages/index.astro`) with placeholder content | ✅ |
+| 1.5 | Verify `npm run dev` serves locally on `localhost:4321` | ✅ |
+| 1.6 | Verify `npm run build` produces static output in `dist/` | ✅ |
+| 1.7 | Add `.nvmrc` (Node 20 LTS) | ✅ |
 
 **Deliverable:** Running local dev server with boilerplate Astro + Tailwind page.
 
@@ -28,13 +28,13 @@ Phased plan from empty repo to production landing page at `teamhitori.com`.
 
 | Task | Description | Status |
 |------|-------------|--------|
-| 2.1 | Hero section — heading, subheading, CTA button (placeholder link) | ⬜ |
-| 2.2 | Features/value props section (3–4 bullet points) | ⬜ |
-| 2.3 | "Currently in Private Beta" banner/messaging | ⬜ |
-| 2.4 | Footer — copyright, links | ⬜ |
-| 2.5 | Nav header — logo placeholder, Login / Get Started links | ⬜ |
-| 2.6 | Mobile responsive (Tailwind breakpoints) | ⬜ |
-| 2.7 | Wire "Get Started" CTA to B2C sign-up URL | ⬜ |
+| 2.1 | Hero section — heading, subheading, CTA button (placeholder link) | ✅ |
+| 2.2 | Features/value props section (3–4 bullet points) | ✅ |
+| 2.3 | "Currently in Private Beta" banner/messaging | ✅ |
+| 2.4 | Footer — copyright, links | ✅ |
+| 2.5 | Nav header — logo placeholder, Login / Get Started links | ✅ |
+| 2.6 | Mobile responsive (Tailwind breakpoints) | ✅ |
+| 2.7 | Wire "Get Started" CTA to B2C sign-up URL | ✅ |
 
 **Deliverable:** A complete if unstyled/unbranded boilerplate landing page.
 

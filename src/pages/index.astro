@@ -1,0 +1,137 @@
+---
+import Base from "../layouts/Base.astro";
+
+const B2C_SIGNUP_URL =
+  "https://teamhitorib2c.b2clogin.com/teamhitorib2c.onmicrosoft.com/B2C_1_SignUpSignIn_Google/oauth2/v2.0/authorize?client_id=79c882fb-0977-408e-b3b9-5a8128a1e68c&redirect_uri=https://app.teamhitori.com/oauth2/callback&response_type=code&scope=openid%20email%20profile";
+---
+
+<Base>
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 border-b border-gray-800 bg-gray-950/80 backdrop-blur-md">
+    <div class="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
+      <a href="/" class="text-xl font-bold tracking-tight">
+        <span class="text-sky-400">Team</span> Hitori
+      </a>
+      <div class="flex items-center gap-4">
+        <a
+          href={B2C_SIGNUP_URL}
+          class="text-sm text-gray-400 hover:text-gray-200 transition-colors"
+        >
+          Login
+        </a>
+        <a
+          href={B2C_SIGNUP_URL}
+          class="rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-400 transition-colors"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative flex min-h-screen items-center justify-center px-6 pt-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="mb-6 inline-flex items-center rounded-full border border-sky-500/30 bg-sky-500/10 px-4 py-1.5 text-sm text-sky-400">
+          Currently in Private Beta
+        </div>
+        <h1 class="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+          <span class="text-sky-400">Pocket Smyth</span>
+          <br />
+          <span class="text-gray-100">Your Personal AI Agent</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl text-lg text-gray-400 sm:text-xl">
+          An autonomous AI that lives in your own private space. Code, research,
+          automate — 24/7.
+        </p>
+        <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <a
+            href={B2C_SIGNUP_URL}
+            class="rounded-lg bg-sky-500 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/25 hover:bg-sky-400 transition-colors"
+          >
+            Get Started — It's Free
+          </a>
+          <a
+            href="#features"
+            class="rounded-lg border border-gray-700 px-8 py-3 text-base font-semibold text-gray-300 hover:border-gray-500 hover:text-white transition-colors"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 px-6">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-center text-3xl font-bold sm:text-4xl">
+          Why Pocket Smyth?
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-gray-400">
+          A personal AI agent that's always on, always yours.
+        </p>
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: "🧠",
+              title: "Persistent Memory",
+              description: "Remembers everything across sessions. Your agent learns and grows with you.",
+            },
+            {
+              icon: "💻",
+              title: "Full Dev Environment",
+              description: "Complete development environment with tools, terminals, and file access.",
+            },
+            {
+              icon: "🔒",
+              title: "Secure & Isolated",
+              description: "Your own private container. No one else can access your data or sessions.",
+            },
+            {
+              icon: "🌍",
+              title: "Anywhere, Anytime",
+              description: "Access your agent from any device, any browser. It's always running.",
+            },
+          ].map((feature) => (
+            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6">
+              <div class="mb-4 text-3xl">{feature.icon}</div>
+              <h3 class="mb-2 text-lg font-semibold">{feature.title}</h3>
+              <p class="text-sm text-gray-400">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6">
+      <div class="mx-auto max-w-3xl rounded-2xl border border-gray-800 bg-gray-900/50 p-12 text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl">Ready to get started?</h2>
+        <p class="mt-4 text-gray-400">
+          Join the private beta and get your own personal AI agent.
+        </p>
+        <a
+          href={B2C_SIGNUP_URL}
+          class="mt-8 inline-block rounded-lg bg-sky-500 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/25 hover:bg-sky-400 transition-colors"
+        >
+          Get Started — It's Free
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 py-8 px-6">
+    <div class="mx-auto max-w-6xl flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <p class="text-sm text-gray-500">
+        &copy; {new Date().getFullYear()} Team Hitori. All rights reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="https://github.com/teamhitori" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+</Base>
