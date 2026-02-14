@@ -19,18 +19,25 @@ www.teamhitori.com  → Redirects here
 |-----------|------------|
 | Framework | Astro |
 | Styling | Tailwind CSS |
-| Hosting | Hetzner VM (Docker container) |
-| TLS | Let's Encrypt wildcard (via `logic-agent-platform`) |
+| Hosting | Azure Static Web Apps (CDN) |
+| TLS | Managed by Azure SWA |
+| CI/CD | GitHub Actions (auto-deploy on push to `main`) |
+| DNS | Azure DNS (managed via Terraform in `logic-agent-platform`) |
 
 ## Project Structure
 
 ```
 team-hitori-landing/
-├── src/                # Astro pages and components
-├── public/             # Static assets (images, favicon)
-├── Dockerfile          # Static file serving
+├── src/
+│   ├── layouts/        # Base HTML layouts
+│   ├── pages/          # Astro pages (index, etc.)
+│   └── components/     # Reusable UI components
+├── public/             # Static assets (images, favicon, logo)
+├── .github/workflows/  # GitHub Actions CI/CD
 ├── docs/               # Project-specific documentation
-└── README.md           # This file
+│   ├── AGENT_HANDOFF.md
+│   └── ROADMAP.md
+└── README.md
 ```
 
 ## Related Repositories
@@ -52,11 +59,18 @@ npm run dev
 
 # Build for production
 npm run build
+
+# Preview production build
+npm run preview
 ```
 
 ## Deployment
 
-Deployed as a Docker container on the Hetzner VM, routed via Traefik at `teamhitori.com`. See [logic-agent-platform](https://github.com/teamhitori/logic-agent-platform) for infrastructure details.
+Deployed to **Azure Static Web Apps** via GitHub Actions. Pushing to `main` triggers an automatic build and deploy.
+
+- Custom domain `teamhitori.com` configured via Azure DNS (Terraform)
+- See [docs/ROADMAP.md](docs/ROADMAP.md) for the project plan
+- See [logic-agent-platform](https://github.com/teamhitori/logic-agent-platform) for infrastructure details
 
 ---
 
