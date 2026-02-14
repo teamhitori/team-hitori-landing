@@ -1,0 +1,26 @@
+# ===== Dependencies =====
+node_modules/
+
+# ===== Build output =====
+dist/
+.astro/
+
+# ===== Environment =====
+.env
+.env.*
+!.env.example
+
+# ===== OS & Editor =====
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+!.vscode/settings.json.example
+.idea/
+
+# ===== Logs & Temp =====
+*.log
+tmp/
+temp/
