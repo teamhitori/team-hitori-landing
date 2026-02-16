@@ -46,11 +46,11 @@ Phased plan from empty repo to production landing page at `teamhitori.com`.
 
 | Task | Description | Status |
 |------|-------------|--------|
-| 3.1 | Create `.github/workflows/deploy.yml` using `Azure/static-web-apps-deploy@v1` | ⬜ |
-| 3.2 | Configure build: `app_location: "/"`, `output_location: "dist"`, `app_build_command: "npm run build"` | ⬜ |
-| 3.3 | Add `AZURE_STATIC_WEB_APPS_API_TOKEN` as GitHub repo secret | ⬜ |
-| 3.4 | Test: push to `main`, verify build succeeds and deploys to SWA staging URL | ⬜ |
-| 3.5 | (Optional) Add PR preview environments (SWA supports this natively) | ⬜ |
+| 3.1 | Create `.github/workflows/deploy.yml` using `Azure/static-web-apps-deploy@v1` | ✅ |
+| 3.2 | Configure build: `app_location: "/"`, `output_location: "dist"`, `app_build_command: "npm run build"` | ✅ |
+| 3.3 | Add `AZURE_STATIC_WEB_APPS_API_TOKEN` as GitHub repo secret | ⏳ Blocked on Phase 4 (SWA resource) |
+| 3.4 | Test: push to `main`, verify build succeeds and deploys to SWA staging URL | ⏳ Blocked on Phase 4 (SWA resource) |
+| 3.5 | PR preview environments (SWA `close_pull_request` job) | ✅ |
 
 **Deliverable:** Every push to `main` auto-deploys to Azure Static Web Apps.
 
