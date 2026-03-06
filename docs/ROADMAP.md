@@ -64,14 +64,14 @@ Phased plan from empty repo to production landing page at `teamhitori.com`.
 
 | Task | Description | Status |
 |------|-------------|--------|
-| 4.1 | Create Terraform module `terraform/modules/static-web-app/` | ⬜ |
+| 4.1 | Create Terraform module `terraform/modules/static-web-app/` | ✅ Done (in logic-agent-platform) |
 | 4.2 | Provision `azurerm_static_web_app` resource (Free tier, West Europe or nearest) | ⬜ |
-| 4.3 | Output the SWA deployment token (for GitHub Actions secret) | ⬜ |
-| 4.4 | Output the SWA auto-generated hostname (e.g., `*.azurestaticapps.net`) | ⬜ |
-| 4.5 | Add custom domain `teamhitori.com` via `azurerm_static_web_app_custom_domain` | ⬜ |
-| 4.6 | Add custom domain `www.teamhitori.com` (CNAME → SWA hostname) | ⬜ |
-| 4.7 | Update DNS module: change apex `A` record from Bluehost IP to SWA requirements | ⬜ |
-| 4.8 | Update DNS module: add TXT validation record for SWA custom domain | ⬜ |
+| 4.3 | Output the SWA deployment token (for GitHub Actions secret) | ✅ In module |
+| 4.4 | Output the SWA auto-generated hostname (e.g., `*.azurestaticapps.net`) | ✅ In module |
+| 4.5 | Add custom domain `teamhitori.com` via `azurerm_static_web_app_custom_domain` | ✅ In module |
+| 4.6 | Add custom domain `www.teamhitori.com` (CNAME → SWA hostname) | ✅ In module |
+| 4.7 | Update DNS module: change apex `A` record from Bluehost IP to SWA requirements | ✅ Conditional (`enable_landing_page_records`) |
+| 4.8 | Update DNS module: add TXT validation record for SWA custom domain | ✅ Handled by SWA module |
 | 4.9 | Remove apex `A → 66.235.200.147` (Bluehost) — no longer needed | ⬜ |
 | 4.10 | `terraform plan` + `terraform apply` in dev, verify DNS propagation | ⬜ |
 

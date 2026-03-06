@@ -6,17 +6,36 @@ This document provides context for an AI agent working on this repo.
 
 Static landing page for **Team Hitori** at `teamhitori.com`. This is a marketing site that showcases Team Hitori's products, with **Pocket Smyth** as the first product.
 
+> **Platform overview:** See [logic-agent-platform/docs/platform-overview.md](https://github.com/teamhitori/logic-agent-platform/blob/main/docs/platform-overview.md) for the high-level cross-repo architecture, credential reference, and dependency map.
+
+### Scope Boundaries
+
+This project **owns:**
+- Landing page content, design, and branding at `teamhitori.com`
+- Astro + Tailwind source code
+- GitHub Actions CI/CD workflow for Azure Static Web Apps deployment
+
+This project **does NOT own:**
+- Azure SWA infrastructure or DNS records (see `logic-agent-platform`)
+- Authentication or user management (see `pocket-smyth-portal`)
+- Agent Zero runtime (see `agent-zero` fork)
+- Platform-wide credentials (see `logic-agent-platform/docs/platform-overview.md`)
+
 ## Current State
 
 | Component | Status |
 |-----------|--------|
 | Repository created | ✅ |
-| Astro project scaffolded | ⬜ Not started |
-| Landing page design | ⬜ Not started |
-| GitHub Actions CI/CD | ⬜ Not started |
-| Azure Static Web Apps infra | ⬜ Not started |
+| Astro project scaffolded | ✅ Done |
+| Tailwind CSS integrated | ✅ Done |
+| Boilerplate landing page | ✅ Done |
+| Logo + favicon | ✅ Done |
+| Hero section | ✅ Done |
+| B2C sign-up CTA | ✅ Done |
+| Brand/design exploration | ✅ Done |
+| GitHub Actions CI/CD | ⏳ Blocked on SWA resource |
+| Azure Static Web Apps infra | ⏳ Terraform ready, not yet applied |
 | Production deployment | ⬜ Not started |
-| Brand/design exploration | ⬜ Not started |
 
 ## Key Requirements
 
@@ -29,12 +48,13 @@ Static landing page for **Team Hitori** at `teamhitori.com`. This is a marketing
 
 ## B2C Sign-Up Link
 
-The "Get Started" button should redirect to:
+The "Get Started" button should redirect to the B2C sign-up flow. The current URL is:
 ```
-https://teamhitorib2c.b2clogin.com/teamhitorib2c.onmicrosoft.com/B2C_1_SignUpSignIn_Google/oauth2/v2.0/authorize?client_id=79c882fb-0977-408e-b3b9-5a8128a1e68c&redirect_uri=https://app.teamhitori.com/oauth2/callback&response_type=code&scope=openid%20email%20profile
+https://teamhitorib2c.b2clogin.com/teamhitorib2c.onmicrosoft.com/B2C_1_SignUpSignIn_Google/oauth2/v2.0/authorize?client_id=79c882fb-0977-408e-b3b9-5a8128a1e68c&redirect_uri=https://login.teamhitori.com/oauth2/callback&response_type=code&scope=openid%20email%20profile
 ```
 
-(This will need updating once `pocket-smyth-portal` is deployed.)
+> **Note:** The `redirect_uri` will need updating once `pocket-smyth-portal` is deployed.
+> B2C credentials are managed in [logic-agent-platform/docs/platform-overview.md](https://github.com/teamhitori/logic-agent-platform/blob/main/docs/platform-overview.md#credentials-reference-authoritative).
 
 ## Deployment
 

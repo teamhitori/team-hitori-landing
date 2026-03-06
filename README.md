@@ -45,7 +45,7 @@ team-hitori-landing/
 | Repository | Purpose |
 |---|---|
 | [logic-agent-platform](https://github.com/teamhitori/logic-agent-platform) | Infrastructure, IaC, deployment scripts, platform-wide docs |
-| [pocket-smyth-portal](https://github.com/teamhitori/pocket-smyth-portal) | Portal UI + Control Plane API |
+| [pocket-smyth-portal](https://github.com/teamhitori/pocket-smyth-portal) | Portal UI + API Routes + Admin Agent sidecar |
 | [agent-zero](https://github.com/teamhitori/agent-zero) | Agent Zero AI framework (fork) |
 
 ## Development
@@ -71,6 +71,7 @@ Deployed to **Azure Static Web Apps** via GitHub Actions. Pushing to `main` trig
 - Custom domain `teamhitori.com` configured via Azure DNS (Terraform)
 - See [docs/ROADMAP.md](docs/ROADMAP.md) for the project plan
 - See [logic-agent-platform](https://github.com/teamhitori/logic-agent-platform) for infrastructure details
+- For platform-wide architecture, see [logic-agent-platform/docs/platform-overview.md](https://github.com/teamhitori/logic-agent-platform/blob/main/docs/platform-overview.md)
 
 ---
 
