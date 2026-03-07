@@ -94,6 +94,13 @@ These changes are managed in `logic-agent-platform/terraform/modules/dns/`.
 
 See [docs/ROADMAP.md](ROADMAP.md) for the phased project plan.
 
+## Feature Requirements
+
+Detailed user stories with acceptance criteria for each epic:
+- [feature-requirements-E-04.md](feature-requirements-E-04.md) — Landing Page Scaffold (Done)
+- [feature-requirements-E-06.md](feature-requirements-E-06.md) — CI/CD & Go-Live
+- [feature-requirements-E-07.md](feature-requirements-E-07.md) — Brand & Content
+
 ## Related Repos
 
 - **[logic-agent-platform](https://github.com/teamhitori/logic-agent-platform)** — Infrastructure, platform-wide docs, deployment scripts
