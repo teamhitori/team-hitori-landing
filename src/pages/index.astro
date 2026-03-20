@@ -38,7 +38,7 @@ const features = [
   <!-- Scrolling Content -->
   <div class="relative z-10">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0D0208]/90 backdrop-blur-lg border-b border-[#00FF41]/20 animate-nav-slide-down">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0D0208]/90 backdrop-blur-lg border-b border-[#00FF41]/20 animate-nav-slide-down shadow-lg shadow-black/40">
       <div class="max-w-7xl mx-auto px-6 py-3">
         <div class="flex items-center justify-between">
           <!-- Logo + Brand -->
@@ -131,19 +131,20 @@ const features = [
               Explore Our Products
             </a>
 
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 animate-fade-in-delay">
-              <div class="w-6 h-10 border-2 border-[#00FF41] rounded-full flex items-start justify-center p-2">
-                <div class="w-1 h-2 bg-[#00FF41] rounded-full animate-scroll-bounce"></div>
-              </div>
-            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator (outside the flex container so it doesn't overlap) -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-fade-in-delay">
+          <div class="w-6 h-10 border-2 border-[#00FF41] rounded-full flex items-start justify-center p-2">
+            <div class="w-1 h-2 bg-[#00FF41] rounded-full animate-scroll-bounce"></div>
           </div>
         </div>
       </section>
 
       <!-- Product Showcase -->
       <section id="products" class="relative py-20 px-6 overflow-hidden">
-        <div class="relative z-10 max-w-7xl mx-auto bg-[#0D0208]/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00FF41]/10">
+        <div class="relative z-10 max-w-7xl mx-auto bg-[#0D0208]/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(0,255,65,0.08),0_20px_60px_rgba(0,0,0,0.5)] border border-[#00FF41]/20">
           <!-- Section Header -->
           <div class="text-center mb-20 reveal">
             <h2
@@ -225,7 +226,7 @@ const features = [
 
     <!-- Footer -->
     <footer class="relative py-12 px-6">
-      <div class="relative z-10 max-w-7xl mx-auto bg-[#0D0208]/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-[#00FF41]/10">
+      <div class="relative z-10 max-w-7xl mx-auto bg-[#0D0208]/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(0,255,65,0.08),0_20px_60px_rgba(0,0,0,0.5)] border border-[#00FF41]/20">
         <div class="flex flex-col md:flex-row items-center justify-between gap-8">
           <!-- Brand -->
           <div class="reveal">
