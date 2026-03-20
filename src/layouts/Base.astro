@@ -38,7 +38,15 @@ const {
     />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://teamhitori.com" />
     <title>{title}</title>
+
+    <!-- Redirect www to apex domain (client-side — SWA doesn't support host-based 301s) -->
+    <script is:inline>
+      if (location.hostname === 'www.teamhitori.com') {
+        location.replace('https://teamhitori.com' + location.pathname + location.search + location.hash);
+      }
+    </script>
   </head>
   <body class="dark min-h-screen bg-[#0D0208] text-white antialiased overflow-x-hidden" style="font-family: 'Inter', sans-serif;">
     <slot />

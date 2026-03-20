@@ -2,7 +2,7 @@
 
 > **Epic:** E-06 — Landing Page CI/CD & Go-Live
 > **Release:** R1 — Landing Live
-> **Epic Status:** To Do
+> **Epic Status:** In Progress
 > **Assignee:** team-hitori-landing
 
 ## Summary
@@ -26,7 +26,7 @@ Establish an automated deployment pipeline and verify the landing page is access
 | **Acceptance Criteria** | 1. GitHub Actions workflow (`.github/workflows/deploy.yml`) triggers on push to `main`. 2. Workflow uses `Azure/static-web-apps-deploy@v1` action with `app_location: "/"`, `output_location: "dist"`, `app_build_command: "npm run build"`. 3. The `AZURE_STATIC_WEB_APPS_API_TOKEN` secret is configured in the GitHub repo. 4. A push to `main` results in a successful build and deployment to the Azure Static Web Apps staging URL within 5 minutes. 5. The deployed site content matches the latest `main` commit. |
 | **Priority** | Must |
 | **Story Points** | 3 |
-| **Status** | Backlog |
+| **Status** | Done |
 | **Dependencies** | E-05 (SWA Provisioning & DNS Cutover — `logic-agent-platform`) must provide the deployment token. The workflow file is already scaffolded; this feature is blocked solely on the infrastructure secret. |
 
 ---
@@ -44,7 +44,7 @@ Establish an automated deployment pipeline and verify the landing page is access
 | **Acceptance Criteria** | 1. Opening or updating a PR against `main` triggers a preview build. 2. Azure Static Web Apps generates a unique preview URL for the PR. 3. Closing or merging the PR automatically cleans up the preview environment. 4. Preview URL is accessible and displays the PR branch content. |
 | **Priority** | Should |
 | **Story Points** | 2 |
-| **Status** | Backlog |
+| **Status** | Done |
 | **Dependencies** | F-06-01 (pipeline must be operational). The `close_pull_request` job is already scaffolded in the workflow. |
 
 ---
@@ -80,7 +80,7 @@ Establish an automated deployment pipeline and verify the landing page is access
 | **Acceptance Criteria** | 1. `teamhitori.com` serves content over HTTPS with a valid TLS certificate. 2. Certificate is issued by a trusted CA (Azure-managed via DigiCert). 3. Certificate covers both `teamhitori.com` and `www.teamhitori.com`. 4. Certificate auto-renews before expiry (managed by Azure SWA). 5. No mixed-content warnings in the browser console. |
 | **Priority** | Must |
 | **Story Points** | 1 |
-| **Status** | Backlog |
+| **Status** | Done |
 | **Dependencies** | F-06-03 (production domain must be live). |
 
 ---
@@ -143,16 +143,16 @@ Establish an automated deployment pipeline and verify the landing page is access
 
 | ID | Title | Type | Priority | Points | Status |
 |----|-------|------|----------|--------|--------|
-| F-06-01 | Automated Build & Deploy Pipeline | NF | Must | 3 | Backlog |
-| F-06-02 | Pull Request Preview Environments | NF | Should | 2 | Backlog |
+| F-06-01 | Automated Build & Deploy Pipeline | NF | Must | 3 | Done |
+| F-06-02 | Pull Request Preview Environments | NF | Should | 2 | Done |
 | F-06-03 | Production Domain Verification | NF | Must | 2 | Backlog |
-| F-06-04 | TLS Certificate Verification | NF | Must | 1 | Backlog |
+| F-06-04 | TLS Certificate Verification | NF | Must | 1 | Done |
 | F-06-05 | Sign-Up Flow E2E Verification | F | Must | 2 | Backlog |
 | F-06-06 | Platform Service Isolation Verification | NF | Must | 2 | Backlog |
 | F-06-07 | Performance Baseline (Lighthouse Audit) | NF | Should | 3 | Backlog |
 
-**Total:** 15 story points — all in Backlog, blocked on E-05 (SWA Provisioning).
+**Total:** 15 story points — 6 Done, 9 remaining.
 
 ### Key Dependency
 
-All E-06 features are blocked on **E-05 — SWA Provisioning & DNS Cutover** (owned by `logic-agent-platform`). The Terraform module is written and ready; it needs `terraform apply` and the resulting deployment token shared as a GitHub secret in this repo.
+E-05 — SWA Provisioning & DNS Cutover is **Done**. Remaining features require production verification.
