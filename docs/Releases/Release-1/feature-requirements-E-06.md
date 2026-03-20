@@ -62,7 +62,7 @@ Establish an automated deployment pipeline and verify the landing page is access
 | **Acceptance Criteria** | 1. `https://teamhitori.com` returns the landing page with HTTP 200. 2. `https://www.teamhitori.com` issues a 301 redirect to `https://teamhitori.com`. 3. `http://teamhitori.com` redirects to `https://teamhitori.com` (HTTPS enforcement). 4. Page content matches the latest deployed version from `main`. |
 | **Priority** | Must |
 | **Story Points** | 2 |
-| **Status** | Backlog |
+| **Status** | Done |
 | **Dependencies** | F-06-01 + E-05 (DNS cutover to Azure Static Web Apps must be complete). |
 
 ---
@@ -98,8 +98,10 @@ Establish an automated deployment pipeline and verify the landing page is access
 | **Acceptance Criteria** | 1. Clicking "Get Started" in the hero section redirects to the B2C sign-up/sign-in page. 2. Clicking "Get Started" in the secondary CTA section does the same. 3. Clicking "Login" in the nav bar redirects to the B2C sign-up/sign-in page. 4. The B2C page loads without errors and displays identity provider options (Google, Microsoft). 5. The `redirect_uri` parameter in the B2C URL is correct for production (updated from placeholder if necessary). |
 | **Priority** | Must |
 | **Story Points** | 2 |
-| **Status** | Backlog |
+| **Status** | Deferred to R2 / E-09 |
 | **Dependencies** | F-06-03 (production site must be serving). B2C tenant and identity providers are already configured (E-02, owned by `logic-agent-platform`). |
+
+> **Note:** Moved to Release 2 (E-09 — Portal Middleware & Auth Routing). The sign-up flow E2E verification depends on the portal's `redirect_uri` and auth callback being finalized, which happens in R2.
 
 ---
 
@@ -116,7 +118,7 @@ Establish an automated deployment pipeline and verify the landing page is access
 | **Acceptance Criteria** | 1. `*.teamhitori.com` wildcard DNS still resolves to the Hetzner VM IP. 2. `app.teamhitori.com` still routes to the Hetzner VM. 3. Email delivery via Google Workspace (MX records) still functions — send a test email to/from `@teamhitori.com`. 4. No DNS record changes have affected any non-landing-page services. |
 | **Priority** | Must |
 | **Story Points** | 2 |
-| **Status** | Backlog |
+| **Status** | Done |
 | **Dependencies** | F-06-03 (DNS changes for the landing page must be applied first). |
 
 ---
@@ -145,14 +147,14 @@ Establish an automated deployment pipeline and verify the landing page is access
 |----|-------|------|----------|--------|--------|
 | F-06-01 | Automated Build & Deploy Pipeline | NF | Must | 3 | Done |
 | F-06-02 | Pull Request Preview Environments | NF | Should | 2 | Done |
-| F-06-03 | Production Domain Verification | NF | Must | 2 | Backlog |
+| F-06-03 | Production Domain Verification | NF | Must | 2 | Done |
 | F-06-04 | TLS Certificate Verification | NF | Must | 1 | Done |
-| F-06-05 | Sign-Up Flow E2E Verification | F | Must | 2 | Backlog |
-| F-06-06 | Platform Service Isolation Verification | NF | Must | 2 | Backlog |
+| F-06-05 | Sign-Up Flow E2E Verification | F | Must | 2 | Deferred to R2 / E-09 |
+| F-06-06 | Platform Service Isolation Verification | NF | Must | 2 | Done |
 | F-06-07 | Performance Baseline (Lighthouse Audit) | NF | Should | 3 | Backlog |
 
-**Total:** 15 story points — 6 Done, 9 remaining.
+**Total:** 15 story points — 10 Done, 2 deferred to R2, 3 remaining (F-06-07).
 
 ### Key Dependency
 
-E-05 — SWA Provisioning & DNS Cutover is **Done**. Remaining features require production verification.
+E-05 — SWA Provisioning & DNS Cutover is **Done**. F-06-05 deferred to R2/E-09 (sign-up flow depends on portal auth routing).
